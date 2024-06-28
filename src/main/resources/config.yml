@@ -1,0 +1,37 @@
+config:
+  sequence:
+    forcejump: 3
+    delayexplocion: 600
+    countdown: 3
+    particleamount:
+      totem: 50
+      explosionhuge: 2
+      explosionlarge: 10
+  message:
+    playercolor: "&b"
+    messageprefix: "&f[&r&4Rocket&f]&r "
+    messagedeath: "&r Ha Sido Aniquilado"
+    pexecuteby: "Iniciado por "
+    ptarget: "&rhacia el jugador "
+    punknownplayer: "Iniciado por la consola o por un jugador desconocido"
+    pcountdown: "Despege En "
+    pcountdowniszero: "Despege ya"
+    pseflexecute: "Auto rocker iniciado"
+    cexecutetarget: "Iniciado a &b"
+    error:
+      pnotallow1: "&4No tienes permiso para usar el /rocket"
+      pnotallow2: "&4No esta permitodo usar en otros jugadores"
+      pinprogress: "&4No se puede ejecutar el comando en proseso, espere a que termine"
+      cdoesnotspecifyargument: "&4Tiene que espesificar nombre del jugador o le haras rocket a la cosola"
+      nofoundtarget: "&4No se encontro el jugador o esta en modo espectador"
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,8 @@
+main: Plugin.RocketCore
+name: Rocket
+version: 1.0.0
+author: Ceres
+
+commands:
+  Rocket:
+    description: La a las nubes a los jugadores
