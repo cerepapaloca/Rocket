@@ -24,7 +24,7 @@ public class MainConfigManager {
 
     //secuencia
     public static String prefix;
-    public static int forcejump;
+    public static double forcejump;
     public static int delayexplocion;
     public static int countdown;
 
@@ -64,7 +64,7 @@ public class MainConfigManager {
         FileConfiguration config = customConfig.getConfig();
         //otras varibles
         register = config.getBoolean("config.other.register", true);
-        forcejump = config.getInt("config.sequence.forcejump", 3);
+        forcejump = config.getDouble("config.sequence.forcejump", 3);
         countdown = config.getInt("config.sequence.countdown", 3);
         delayexplocion = config.getInt("config.sequence.delaydeexplocation", 600);
         //Paticulas
