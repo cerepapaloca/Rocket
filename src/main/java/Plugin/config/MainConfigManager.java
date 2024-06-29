@@ -16,9 +16,6 @@ public class MainConfigManager {
         configfile = new CustomConfig("config.yml",null,plugin);
         configfile.registerConfig();
     }
-    ///////////////////////////////
-    //config.yml esta es su parte//
-    //////////////////////////////
     //otros
     public static Boolean register;
 
