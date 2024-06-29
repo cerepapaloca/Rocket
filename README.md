@@ -1,4 +1,4 @@
-# ROCKET PLUGIN SERVER
+# ROCKET | MINECRAFT SEVER PLUING
 No creés que es aburrido hacer /kill. pues aquí esta la solución ahora puedes hacer /kill de manea más épica a tus usuarios.
 
 ### COMANDOS
