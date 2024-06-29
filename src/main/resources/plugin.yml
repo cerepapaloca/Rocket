@@ -2,6 +2,10 @@ main: Plugin.RocketCore
 name: Rocket
 version: 1.0.0
 author: Ceres
+permissions:
+  Rocket:
+    Other:
+    Self:
 
 commands:
   Rocket:
