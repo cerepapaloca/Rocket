@@ -29,7 +29,7 @@ public class CommandRocket implements CommandExecutor {
     public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args) {
         if(sender instanceof Player){
             Player player = (Player) sender;
-            if(player.hasPermission("Rocket.self")) {
+            if(player.hasPermission("Rocket.Self")) {
                 if (args.length == 0) {
 
                     Comprobacion(player, args, true);
@@ -60,17 +60,21 @@ public class CommandRocket implements CommandExecutor {
                 Player target = player;
                 Secuencia (target);
                 target.sendMessage(ChatColor.translateAlternateColorCodes('&', MainConfigManager.prefix + MainConfigManager.pseflexecute));//"Auto rocker iniciado"
-                Bukkit.getConsoleSender().sendMessage(ChatColor.translateAlternateColorCodes('&', MainConfigManager.prefix + MainConfigManager.pexecuteby + MainConfigManager.playercolor + player.getName() + "&r " + MainConfigManager.ptarget + MainConfigManager.playercolor + target.getName()));//"&rhacia el jugador &b"
+                if(MainConfigManager.register) {
+                    Bukkit.getConsoleSender().sendMessage(ChatColor.translateAlternateColorCodes('&', MainConfigManager.prefix + MainConfigManager.pexecuteby + MainConfigManager.playercolor + player.getName() + "&r " + MainConfigManager.ptarget + MainConfigManager.playercolor + target.getName()));//"&rhacia el jugador &b"
+                }
             }else{
                 String nameplayer = args[0];
                 Player target = getServer().getPlayerExact(nameplayer);
-                if (target != null && target.getGameMode() != GameMode.SPECTATOR) {
+                if (target != null) {
                     Secuencia(target);
                     //mesajes de ejecucion con exito
                     if (player != null) {
                         target.sendMessage(ChatColor.translateAlternateColorCodes('&', MainConfigManager.prefix + MainConfigManager.pexecuteby + MainConfigManager.playercolor + player.getName()));//"Iniciado por "
                         player.sendMessage(ChatColor.translateAlternateColorCodes('&', MainConfigManager.prefix + MainConfigManager.cexecutetarget + MainConfigManager.playercolor + target.getName()));
-                        Bukkit.getConsoleSender().sendMessage(ChatColor.translateAlternateColorCodes('&', MainConfigManager.prefix + MainConfigManager.pexecuteby + MainConfigManager.playercolor + player.getName() + "&r " + MainConfigManager.ptarget + MainConfigManager.playercolor + target.getName()));//"&rhacia el jugador &b"
+                        if(MainConfigManager.register) {
+                            Bukkit.getConsoleSender().sendMessage(ChatColor.translateAlternateColorCodes('&', MainConfigManager.prefix + MainConfigManager.pexecuteby + MainConfigManager.playercolor + player.getName() + "&r " + MainConfigManager.ptarget + MainConfigManager.playercolor + target.getName()));//"&rhacia el jugador &b"
+                        }
                     } else {
                         target.sendMessage(ChatColor.translateAlternateColorCodes('&', MainConfigManager.prefix + MainConfigManager.punknownplayer));//"Iniciado por la consola o por un jugador desconocido"
                         Bukkit.getConsoleSender().sendMessage(ChatColor.translateAlternateColorCodes('&', MainConfigManager.prefix + MainConfigManager.cexecutetarget + MainConfigManager.playercolor + target.getName()));
@@ -80,7 +84,7 @@ public class CommandRocket implements CommandExecutor {
                 } else if (player != null) {
                     player.sendMessage(ChatColor.translateAlternateColorCodes('&', MainConfigManager.prefix + MainConfigManager.nofoundtarget));//"&3No se encontro el jugador o esta en modo espectador"
                 } else {
-                    Bukkit.getConsoleSender().sendMessage(ChatColor.translateAlternateColorCodes('&', MainConfigManager.prefix + MainConfigManager.nofoundtarget));//"&3No se encontro el jugador o esta en modo espectador"
+                    Bukkit.getConsoleSender().sendMessage(ChatColor.translateAlternateColorCodes('&', MainConfigManager.prefix + MainConfigManager.nofoundtarget));//"&3No se encontro el jugador"
                 }
             }
         //no a terminado la secuencia

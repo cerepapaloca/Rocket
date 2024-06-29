@@ -19,16 +19,20 @@ public class MainConfigManager {
     ///////////////////////////////
     //config.yml esta es su parte//
     //////////////////////////////
+    //otros
+    public static Boolean register;
 
+    //secuencia
     public static String prefix;
     public static int forcejump;
     public static int delayexplocion;
     public static int countdown;
-    public static String playercolor;
+
     //Catidad de Particulas
     public static int totem;
     public static int explosionhuge;
     public static int explosionlarge;
+
     //masajes
     public static String messagedeath;
     public static String pexecuteby;
@@ -38,6 +42,8 @@ public class MainConfigManager {
     public static String pcountdowniszero;
     public static String cexecutetarget;
     public static String pseflexecute;
+    public static String playercolor;
+
     //errores
     public static String pnotallow1;
     public static String pnotallow2;
@@ -57,6 +63,7 @@ public class MainConfigManager {
     public void loadCustomConfig() {
         FileConfiguration config = customConfig.getConfig();
         //otras varibles
+        register = config.getBoolean("config.other.register", true);
         forcejump = config.getInt("config.sequence.forcejump", 3);
         countdown = config.getInt("config.sequence.countdown", 3);
         delayexplocion = config.getInt("config.sequence.delaydeexplocation", 600);
@@ -81,7 +88,7 @@ public class MainConfigManager {
         pnotallow1 = config.getString("config.message.error.pnotallow1","&4No tienes permiso para usar el /rocket");
         pnotallow2 = config.getString("config.message.error.pnotallow2","&4No esta permitodo usar en otros jugadores");
         cdoesnotspecifyargument = config.getString("config.message.error.cdoesnotspecifyargument","&4Tiene que espesificar nombre del jugador o le haras rocket a la cosola");
-        nofoundtarget = config.getString("config.message.error.nofoundtarget","&3No se encontro el jugador o esta en modo espectador");
+        nofoundtarget = config.getString("config.message.error.nofoundtarget","&3No se encontro el jugador");
         pinprogress = config.getString( "config.message.error.pinprogress","&4No se puede ejecutar el comando en proseso, espere a que termine");
 
     }
